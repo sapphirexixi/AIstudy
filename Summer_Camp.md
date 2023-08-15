@@ -15,7 +15,10 @@ Git尚硅谷教学：[https://www.bilibili.com/video/BV1wm4y1z7Dg/]
 # Day 2
 
 ```
-
+1.学习Linux和shell的相关命令行
+2.扩展使用markdown语法，上传GitHub学习记录
+3.复习巩固C++使用
+4.初步了解protobuf和yaml的相关知识
 ```
 ##### Note
 ###### Linux & shell：linux是操作系统内核，shell是外壳，用户通过shell外壳来控制操作系统
@@ -43,4 +46,90 @@ Git尚硅谷教学：[https://www.bilibili.com/video/BV1wm4y1z7Dg/]
 - **/proc**：管理内存空间。虚拟的目录，是系统内存的映射，我们可以直接访问这个目录来获取系统信息。这个目录的内容不在硬盘上而是在内存里，我们也可以直接修改里面的某些文件来做修改。%%
 
 ###### Shell命令符
+ls：列出当前目录文件
+cd：进入目录
+pwd：打印当前路径
+~：主目录
+cp：复制
+mv：移动
+rm：删除
+clear：清屏
+cat：显示文件内容
+less：少量显示（空格翻页
+grep：搜索文件内容
+>例：grep xxx file4（搜索file4中含xxx的每一行
+
+wc：字数统计
+>例：wc -w file4
+>        wc -l file4
+
+|命令|意义|
+|---|---|
+|cp file1 file2|复制file1并命名为file2|
+|cp file1 xxx|复制file1至xxx目录|
+|mv file xxx|把file移动到xxx目录|
+|mv file1 file6|把file1重命名为file6|
+|rm file|删除文件|
+|cat file|在屏幕上显示文件内容|
+|less file|在屏幕上显示文件部分内容|
+|head file|显示文件前10行内容|
+|tail file|显示文件末10行内容|
+|grep xxx file|打印file中包含xxx的行|
+|wc -w file|显示字数|
+|wc -l file|显示行数|
+|clear|清屏|
+
+通配符\*：任意个
+？：一个
+###### 其他知识
+
+chmod ()
+只有文件的所有者可以使用 chmod 更改权限。chmod的选项如下
+
+|选项|意义|
+|---|---|
+|u|user|
+|g|group|
+|o|其他|
+|a|all|
+|r|读|
+|w|写入（和删除）|
+|x|执行（和访问目录）|
+|+|添加权限|
+|-|取消权限|
+
+例如，要给某文件添加执行权限，键入
+
+```
+chmod +x file
+```
+
+ctrl+C     取消进程
+
+新建文本文档：gedit 新建文本文档.txt
+
+
+Linux软链接和硬链接[[Linux软连接和硬链接 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/67366919)]
+管道：管道符    |
+```
+[command1] | [command2] | [command3] ...
+```
+将多个命令连接到一起，上一个命令正确输出后执行下一个命令
+
+env # 查看全部全局变量
+printenv HOME # 查看个别全局变量（HOME）
+echo $HOME # 查看个别全局变量（HOME）
+- HOME ：当前用户的主目录
+- PATH ： shell 查找命令的目录列表，由冒号分隔
+- PWD ：当前工作目录
+
+加载环境变量的文件
+/etc/profile # 系统级，登录shell当中加载
+/etc/bashrc # 系统级，可认为都会被加载
+~/.profile # 用户级，登录shell当中加载
+~/.bashrc # 用户级，可认为都会被加载
+
+SSH相关知识[【科普】SSH都不懂，还搞什么网络 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/323322650)
+###### C++[http://t.csdn.cn/OBhf9]
+头文件header guard：#pragma once【防止重定义
 
