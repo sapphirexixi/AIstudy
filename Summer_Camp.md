@@ -268,5 +268,5 @@ Linux平台下动态库的后缀通常为 **.so** ，命名方式通常为 **
 
 
 ##### Cmake
-[cmake笔记](cmake笔记)
+[cmake笔记](cmake笔记.md)
 视频教学：[【从零开始详细介绍CMake】 https://www.bilibili.com/video/BV1vR4y1u77h/?p=10&share_source=copy_web&vd_source=2f6f04a1a48d1d0814f8f161d587ae67]
