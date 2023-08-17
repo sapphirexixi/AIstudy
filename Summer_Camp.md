@@ -130,9 +130,10 @@ echo $HOME # 查看个别全局变量（HOME）
 ~/.bashrc # 用户级，可认为都会被加载
 
 SSH相关知识[【科普】SSH都不懂，还搞什么网络 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/323322650)
-###### C++[http://t.csdn.cn/OBhf9]
+###### C++
 头文件header guard：#pragma once【防止重定义
-
+[【c++面向对象编程速成！90分钟搞定】https://www.bilibili.com/video/BV1oK4y1s7Jd?vd_source=53c9e8e4b19e882ca921ff9d8bba8180]
+[http://t.csdn.cn/OBhf9]
 
 
 # Day 3
@@ -263,10 +264,14 @@ Linux平台下动态库的后缀通常为 **.so** ，命名方式通常为 **
 ```
 # generate shared libg++ invsqrt.cpp -I ./ -fPIC -shared -o libinvsqrt.so# move the shared library to systemsudo mv libinvsqrt.so /usr/local/lib# refreshsudo ldconfig# link to generate the executable fileg++ main.cpp -L . -linvsqrt -o main_shared.exe
 ```
-
-
-
-
 ##### Cmake
-[cmake笔记](cmake笔记.md)
+[cmake笔记](cmake笔记)
 视频教学：[【从零开始详细介绍CMake】 https://www.bilibili.com/video/BV1vR4y1u77h/?p=10&share_source=copy_web&vd_source=2f6f04a1a48d1d0814f8f161d587ae67]
+
+# Day 4
+```
+1.CMake、如学，大概听了一遍
+2.复习ROS使用，学习ROS2
+3.看roboRTS代码包
+4.又一次看了c++相关复习,基础知识复习结束
+```
