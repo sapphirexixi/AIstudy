@@ -275,3 +275,31 @@ Linux平台下动态库的后缀通常为 **.so** ，命名方式通常为 **
 3.看roboRTS代码包
 4.又一次看了c++相关复习,基础知识复习结束
 ```
+# Day 5
+```
+1.学习导航相关内容
+2.初步了解ROS2D导航算法
+```
+#### Note
+##### 导航
+###### Costmap代价地图&自适应蒙特卡罗定位：
+[【ROS 2D导航原理系列教程合集（WHEELTEC）】https://www.bilibili.com/video/BV19b4y1d7Hz?vd_source=53c9e8e4b19e882ca921ff9d8bba8180]
+###### 全局路径规划
+Dijkstra 算法：是一个基于「贪心」、「广度优先搜索」、「动态规划」求一个图中一个点到其他所有点的最短路径的算法，时间复杂度 O(n2)
+A\*算法：【[路径规划之 A* 算法 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/54510444)，深度优先
+###### 局部路径规划
+TEB算法：Timed-Elastic-Band  时间Time+Elastic-Band橡皮筋![[Pasted image 20230819150859.png]]
+1.跟随路径+避障约束2.速度/加速度约束3.运动学约束4.最快路径约束
+调参指令：rosrun rqt_reconfigure rqt_reconfigure
+[[TEB算法总结 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/520293878)]
+DWA算法：Dynamic Window Approach动态窗口法
+其原理主要是在速度空间（v,w）中**采样多组速度**，并模拟出这些速度在一定时间内的**运动轨迹**，并通过**评价函数**对这些轨迹进行评价，**选取最优轨迹**对应的（v,w）驱动机器人运动。
+[[DWA算法总结 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/519958218)]
+
+# Day 5
+```
+1.ROS2学习
+
+```
+#### Note
+##### ROS 2
