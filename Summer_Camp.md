@@ -296,10 +296,89 @@ DWA算法：Dynamic Window Approach动态窗口法
 其原理主要是在速度空间（v,w）中**采样多组速度**，并模拟出这些速度在一定时间内的**运动轨迹**，并通过**评价函数**对这些轨迹进行评价，**选取最优轨迹**对应的（v,w）驱动机器人运动。
 [[DWA算法总结 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/519958218)]
 
-# Day 5
+# Day 6
 ```
 1.ROS2学习
-
 ```
 #### Note
 ##### ROS 2
+###### 通信
+话题-topics
+服务-services
+动作-Action
+参数-parameters
+###### 启动节点
+ros2 run <package_name> <executable_name> 
+例：ros2 run turtlesim turtlesim_node
+
+命令行指令：
+查看节点列表 ros2 node list
+查看节点信息 ros2 node info <node_name>
+重映射节点名称 ros2 run turtlesim turtlesim_node --ros-args \_\_node:=my_turtle【重命名后启动同一个节点
+- ROS2命令行工具源码;[ros2/ros2cli: ROS 2 command line interface tools (github.com)](https://github.com/ros2/ros2cli)
+
+###### 工作空间
+工作空间是包含若干个功能包的目录，一开始大家把工作空间理解成一个文件夹就行了。这个文件夹包含下有`src`。所以一般新建一个工作空间的操作就像下面一样
+
+```
+mkdir -p chapt2_ws/src
+cd chapt2_ws/src
+```
+# Day 7
+```
+1.ROS 2 学习
+2.看代码
+```
+##### ROS 2
+###### 功能包
+相关指令 ros2 pkg []
+```
+create       Create a new ROS2 package
+executables  Output a list of package specific executables
+list         Output a list of available packages
+prefix       Output the prefix path of a package
+xml          Output the XML of the package manifest or a specific tag
+```
+###### ros2 构建工具 colcon
+colcon想当于ros1中的catkin工具即编译工具【需要手动安装
+###### 一般编译流程
+mkdir -p test01_ws/src
+cd test01_ws
+```
+git clone https://github.com/ros2/examples src/examples -b humble
+【ros2示例源码
+```
+colcon build
+
+构建完成后，在`src`同级目录我们应该会看到 `build` 、 `install` 和 `log` 目录:
+
+```
+.
+├── build
+├── install
+├── log
+└── src
+
+4 directories, 0 files
+```
+
+- `build` 目录存储的是中间文件。对于每个包，将创建一个子文件夹，在其中调用例如CMake
+- `install` 目录是每个软件包将安装到的位置。默认情况下，每个包都将安装到单独的子目录中。
+- `log` 目录包含有关每个colcon调用的各种日志信息。
+只编译一个包
+```
+colcon build --packages-select YOUR_PKG_NAME 
+```
+不编译测试单元
+```
+colcon build --packages-select YOUR_PKG_NAME  --cmake-args -DBUILD_TESTING=0
+```
+运行编译的包的测试
+```
+colcon test
+```
+允许通过更改src下的部分文件来改变install（重要
+每次调整 python 脚本时都不必重新build了
+```
+colcon build --symlink-install
+```
